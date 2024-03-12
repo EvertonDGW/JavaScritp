@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercico com Strings</title>
+</head>
+<body>
+    <script>
+    
+    const nome = window.prompt('digite seu nome');
+    window.document.body.innerHTML += (`seu nome é : <strong>${nome} </strong> <br/>`); //o sinal += vai nos permitir colocar coisas no documento html
+    window.document.body.innerHTML += (`seu nome tem <strong>${nome.length}</strong> letras <br/>`);
+    window.document.body.innerHTML += (`a segunda letra do seu nome é: <strong>${nome[1]} </strong><br/>`);
+    window.document.body.innerHTML += (`qual o primeiro indice da letra 'O' no seu nome? <strong>${nome.indexOf('o')}</strong> <br/>`);
+    window.document.body.innerHTML += (`qual o ultimo indice da letra 'O' no seu nome? <strong>${nome.lastIndexOf('o')} </strong><br/>`);
+    window.document.body.innerHTML += (`as ultimas 3 letras do seu nome é: <strong>${nome.slice(-3)} </strong><br/> `);
+    window.document.body.innerHTML += (`as palavras do seu nome são : <strong>${nome.split(' ')}</strong> <br/>`)
+    window.document.body.innerHTML += (`Seu nome em letras MAIÚSCULAS é: <strong>${nome.toUpperCase()}</strong> <br/>`);
+    window.document.body.innerHTML += (`Seu nome em letras MINÚSCULAS é: <strong>${nome.toLowerCase()} </strong><br/>`);
+
+    //lembre-se de usar alt+l+o para visualizar o resultado
+
+    //window.document.write('alguma coisa');
+    //window.document.body.innerHTML = 'alguma outra coisa <br/>'; // aqui adicionamos a quebra de linha corretamente. <br/> é quebra de linha
+    //window.document.body.innerHTML += 'Everton Roberto'; // aqui estamos adicionando 'Everton Roberto' ao final do conteúdo existente no corpo do documento HTML
+
+        //uma dica: voce nao precisa usar o window,ou seja, voce pode simplificar seu codigo sem a necessidade de usar window
+    </script>
+</body>
+</html>
