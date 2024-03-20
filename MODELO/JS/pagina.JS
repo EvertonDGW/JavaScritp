@@ -31,15 +31,51 @@ formulario.addEventListener('submit', function (e) { //dentro de (e) fica o even
         return; //quem decide se continua ou não é o return
     }
 
+    const imc = GetImc(peso, altura);
+    const NivelIMC = GetNivelImc(imc);
 
-    const imc = GetImc = (peso,altura);
-    console.log(imc);
+    const msg = `seu IMC é ${imc} ${NivelIMC}`;
+    MostraResultado(msg,true);
+    
+
+    console.log(imc,NivelIMC);
 
 });
 
-function GetImc (peso,altura) {
-    const imc = peso / altura ** 2;
-    return imc.toFixed
+function GetImc(peso, altura) {
+    const imc = peso / altura ** 2; //primeiro é feito a altura elevada ao quadrado,
+    return imc.toFixed(2);
+}
+
+function GetNivelImc(imc) {
+    const nivel = ['abaixo do peso', 'peso normal', 'sobrepeso', 'obesidade grau 1', 'obesidade grau 2', 'obesidade grau 3'];
+
+    //quando uma dessas condições for verdadeira o resto dos if não sera verificado
+
+    if (imc >= 39.9) {
+        return nivel[5];
+    }
+
+    if (imc >= 34.9) {
+        return nivel[4];
+    }
+
+    if (imc >= 29.9) {
+        return nivel[3];
+    }
+
+    if (imc >= 24.9) {
+        return nivel[2];
+    }
+
+    if (imc >= 18.5) {
+        return nivel[1];
+    }
+
+    if (imc < 18.5) {
+        return nivel[0]
+    }
+
 }
 
 
@@ -54,6 +90,16 @@ function MostraResultado(mensagem, isValid) { //essa função so acontece quando
     const resultado = document.querySelector('#resultado');
     resultado.innerHTML = ''; // vai limpar o que estava anteriormemte em --> resultado
     const paragrafo = CriaParagrafo();
+
+    if (isValid){
+     paragrafo.classList.add('paragrafo-resultado') //criamos uma class para o paragrafo criado chamada --> 'paragrafo-resultado'
+     }
+     else {
+        paragrafo.classList.add('deuruim')
+
+     }
+     //criamos uma class para o paragrafo criado chamada --> 'paragrafo-resultado'
+
     paragrafo.innerHTML = mensagem;
     resultado.appendChild(paragrafo); //vai jogar o paragrafo criado dentro de --> resultado
 

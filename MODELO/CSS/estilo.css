@@ -71,3 +71,13 @@ form button:active{ /* quando eu clickar no button --> active significa quando e
     background: var(--MinhaVariavel-2); /* vai alterar a cor quando eu clickar */
 
 }
+
+.paragrafo-resultado {
+    background-color: greenyellow;
+    padding: 10px 20px;
+}
+
+.deuruim{
+    background-color: blueviolet;
+    padding: 10px 20px;
+}
