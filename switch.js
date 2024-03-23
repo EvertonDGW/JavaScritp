@@ -101,6 +101,7 @@ const atual = hoje.getDay(); // estamos selecionando apenas o dia da semana, ou 
 
 
 //o return vai retorna o resultado do switch, para dentro da variavel diaDaSemana, porque é aqui que a função foi chamada
+
 const diaDaSemana = DiaSemana(atual); // 'atual' é o nosso argumento, ele vai ser passado como parâmetro da função, ou seja, ele será atribuído ao parâmetro 'dia'
 
 
