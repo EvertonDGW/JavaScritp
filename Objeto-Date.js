@@ -1,0 +1,31 @@
+//exibindo  a data e hora usando number
+const data = new Date(2019,   3,  20, 15,   14,     20,        500);
+                    //( ano ,mes,dia,hora,minuto,segundo, milessimo de segunos  )
+console.log(data.toString());
+
+//===========================================================================================
+
+//exibindo  a data e hora usando string
+const data2 = new Date('2024-03-24  17:10:28');
+//     data       hora
+console.log(data2.toString());
+
+//===========================================================================================
+
+//use o comando abaixo para exibir o ano, dia, mes, hora, minuto, segundo etc.....
+
+console.log('dia', data.getDate());
+console.log('mes', data.getMonth()); //mes começa sempre do --> 0
+console.log('ano', data.getFullYear());
+console.log('hora', data.getHours());
+console.log('min', data.getMinutes());
+console.log('seg', data.getSeconds());
+console.log('ms', data.getMilliseconds());
+console.log('dia atual da semana', data.getDay()); // 0 --> domingo e 6 --> sabado
+console.log(data.toString());
+
+
+console.log(Date.now());
+const atual = new Date(1711224971760);
+console.log(atual);
+
