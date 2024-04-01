@@ -1,5 +1,7 @@
 /*
 
+// vamos criar 3 codigos com o mesmo objetivo, exibir data e hora na tela -->   Primeiro Metodo:
+
 const h1 = document.querySelector('.container h1');
 const data = new Date(); //estamos pegando a data e o horario atual
 
@@ -170,14 +172,14 @@ h1.innerHTML = CriaData(data);
 
 
 
-// vamos fazer o mesmo codigo que esta em cima, usando outro metodo:
+// Segundo Metodo:
 
 const h1 = document.querySelector('.container h1');
 const data = new Date();// estamos pegando a data e horario atual
 
 // Define as opções de formatação da data no formato completo
 const opcoes = { //criamos um objeto chamado --> opcoes
-    
+
     dateStyle: 'full' // esta pegando a data de forma completa, incluindo todos os detalhes disponíveis, como o dia da semana completo, o dia do mês, o nome completo do mês e o ano completo.
 };
 
@@ -200,6 +202,87 @@ METODOS são basicamente FUNÇÕES criadas dentro de OBJETOS.
 
 
   */
+
+//XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+// Terceiro Metodo:
+
+
+/* const h1 = document.querySelector('.container h1');
+const data = new Date(); //estamos pegando a data e o horario atual
+
+
+function DiaSemana(dia) {
+    const DiasdaSemana = ['domingo', 'segunda', 'terça', 'quarta', 'quinta', 'sexta', 'sabado',]; // criamos um array
+    return DiasdaSemana[dia]
+} */
+
+//o resultado dessa função retorna para onde ela foi chamada
+
+
+//indices dos dias da semana:
+//0 --> domingo
+//1 --> segunda
+//2 --> terça
+//3 --> quarta
+//4 --> quinta
+//5 --> sexta
+//6 --> sabado 
+
+
+/* function DiaMes(Mes) {
+    const meses = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro',]; // criamos um array
+    return meses[Mes]
+
+} */
+
+//o resultado dessa função retorna para onde ela foi chamada
+
+
+//indices dos meses:
+//Janeiro: 0
+//Fevereiro: 1
+//Março: 2
+//Abril: 3
+//Maio: 4
+//Junho: 5
+//Julho: 6
+//Agosto: 7
+//Setembro: 8
+//Outubro: 9
+//Novembro: 10
+//Dezembro: 11 
+
+
+//a função ZeroEsquerda vai resolver o problema da hora. exemplo:
+// 21:1 --> percebe que falta o 0 zero, ou seja, a hora correta seria 21:01
+//então a função vai resolver esse problema
+
+/* function ZeroEsquerda(num) {
+    return num >= 10 ? num : `0${num}`; //condição ? true : false
+}
+
+function CriaData(data) {
+    const DiaDaSemana = data.getDay();//pegando o indice do dia
+    const NumeroDoMes = data.getMonth();//pegando o indice do mes
+
+    const NomeDia = DiaSemana(DiaDaSemana);//chamando a função
+    const NomeMes = DiaMes(NumeroDoMes);//chamando a outra função
+
+    return (
+
+        `${NomeDia}, ${data.getDate()} de ${NomeMes}` + //getDate() exibi o dia do mes
+        ` de ${data.getFullYear()} ` +
+        ` ${ZeroEsquerda(data.getHours())}:${ZeroEsquerda(data.getMinutes())}` //estamos passando a hora e minutos como paramento da função ZeroEsquerda,ou seja, esse valores vão ser jogados em (num)
+    )
+
+
+}
+
+
+//o resultado da função CriaData retorna exatamente para onde ele foi chamada
+
+h1.innerHTML = CriaData(data); */
 
 
 
