@@ -47,4 +47,6 @@ console.log(sessenta)
 const [lista1, lista2, lista3] = NumerosBom; // os arrays ão ser jogador dentro das listas
 console.log(lista2[2]) //vai exibir o numero 6
 
+//CONCLUSÃO: usamos desestruturação via atribuição por arrays, com o objetivo de extrair os elementos/valores de um array 
+
 
