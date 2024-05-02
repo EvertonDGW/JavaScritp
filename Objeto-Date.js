@@ -29,3 +29,25 @@ console.log(Date.now());
 const atual = new Date(1711224971760);
 console.log(atual);
 
+//==============================================================================================================================================================================
+console.log('############################################################################################################')
+
+
+/* quando você cria um objeto Date sem passar nenhum argumento para o construtor,
+ele representa a data e hora atual com base no fuso horário do sistema onde o código está sendo executado. Por exemplo: */
+
+const dataAtual = new Date();
+console.log(dataAtual);
+
+//================================================================================================================================================================================
+
+
+//Se você criar um objeto Date com um argumento de valor zero, como:
+
+const dataZero = new Date(0);
+console.log(dataZero);
+
+//O resultado será uma representação da data "01/01/1970 00:00:00" no fuso horário local.
+//O valor zero para um objeto Date representa exatamente essa data e hora.
+
+/* Essa data de referência, "01/01/1970 00:00:00", é frequentemente usada para cálculos de tempo, como armazenar e manipular datas em milissegundos desde a época Unix. Isso é útil porque permite a representação de datas e horas como números inteiros, facilitando a manipulação matemática do tempo em sistemas computacionais. */
