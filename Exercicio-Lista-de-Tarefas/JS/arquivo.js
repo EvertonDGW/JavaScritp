@@ -100,12 +100,15 @@ document.addEventListener('click',function (e) {
     //no caso o nosso botão apagar possui essa class então se o usuario clickar no botão apagar a condição sera verdadeira e o codigo sera executado
     //quando usamos console.log(el.parentElement); vai exibir no console quem é o pai de determinado elemento
     //apos usar esse codigo descobrimos que quando o usuario adiciona uma tarefa essa tarefa fica dentro de uma lista ordenada(Li),ou seja, a lista ordenada(Li) é o pai da tarefa adicionada e do botão apagar
-    if (el.classList.contains('apagar')) {
+
+    if (el.classList.contains('apagar')) { // ********* if que apaga as terefas quando botão apagar é clickado **********************
         console.log('apagar clickado')
         console.log(el.parentElement);
 
         //ou seja quando o nosso botão APAGAR é clickado seu pai é removida no caso a lista ordenada(Li) e junto dela é removido a tarefa adicionado eo botão apagar
-        el.parentElement.remove();    }
+        el.parentElement.remove();
+        SalvarTarefas() 
+       }
 });
 
 
@@ -134,7 +137,46 @@ function SalvarTarefas() {
         ListaDeTarefas.push(TarefaTexto) 
         console.log(ListaDeTarefas);
     }
+
+    //bom bascimante toda tarefa adicionada ele fica armazenada dentro de um array
+    //vamos converte os elementos do array para uma string do tipo JSON, para fazer isso vamos usar o metodo JSON.stringfy()
+    //ou seja se o usuario adicionar 2 tarefas ['tomar banho', 'estudar'] o metodo JSON.stringfy() vai converte os elementos do array para uma string do tipo JSON 
+    //ficando assim ---->   ["tomar" banho", "estudar"]
+
+const tarefasJSON = JSON.stringify(ListaDeTarefas);
+
+//vamos salvar as tarefas adicionadas no navegador
+//localStorage significa: armazenamento local, basicamante ele guarda/salva coisas no navegador. no caso vamos salvar strings
+//tarefas: É a chave que será usada para recuperar os dados mais tarde.
+//tarefasJSON: É o valor que estamos armazenando. 
+//se voce quiser saber onde fica armazenado cada tarefa adicionada vá no documento HTML e use --> inspecionar elemento --> application em seguida procure por local storage
+//quando apagamos uma tarefa ela não é deletada da nossa aplication ou seja ela nao é apagada do nosso local store, ou seja, temos um problema. para resolver isso
+//precisamos adicionar a função SalvarTarefas() dentro do if onde apaga as tarefas
+//set é usado para indicar a ação de definir ou atribuir um valor a uma variável, propriedade ou recurso.
+localStorage.setItem('tarefas', tarefasJSON)//localStore é global do navegador, ou seja, voce pode usar em qualquer lugar
+
 }
+
+//agora vamos criar uma função que vai recarregar as tarefas adicionadas quando voce entrar no site novamente
+function AdicionaTarefasSalvas() {
+    const tarefas = localStorage.getItem('tarefas')
+    //lembre-se que toda tarefa adicionada fica armazenada dentro de um array mas, o codigo acima esta convertendo esse array para um string do tipo JSON
+    //então vamos usar JSON.parse(tarefas) para converte novamento para um array
+    //get é usado para indicar a ação de recuperar ou obter um valor de uma variável, propriedade ou recurso.
+    //ou seja estamos convertendo devolta para um objeto javascript
+    const ListaDeTarefas = JSON.parse(tarefas)
+    
+    //agora vamos extrair as tarefas salvas no local storage, para ser exibas para o usuario quando entra novamente no site
+
+    for (let tarefa of ListaDeTarefas) {
+        CriaTarefa(tarefa)
+    }
+    
+}
+
+AdicionaTarefasSalvas()
+
+
 
 
 
