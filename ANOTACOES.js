@@ -16,3 +16,5 @@ continue   ou    i++ */
 
   //classList.contains() é usado para verificar se o elemento clicado possui as classes específicas ('zerar', 'iniciar' e 'pausar'). Isso permite que o código determine qual ação deve ser executada com base na classe do elemento clicado.
     //Em resumo, classList.contains() é útil para adicionar lógica condicional baseada na presença ou ausência de classes CSS em elementos HTML.
+
+  // METODOS são basicamente FUNÇÕES criadas dentro de OBJETOS.
