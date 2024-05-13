@@ -18,3 +18,6 @@ continue   ou    i++ */
     //Em resumo, classList.contains() é útil para adicionar lógica condicional baseada na presença ou ausência de classes CSS em elementos HTML.
 
   // METODOS são basicamente FUNÇÕES criadas dentro de OBJETOS.
+  
+
+  // quando voce usa --> 3 pontinhos ... isso é o operador rest operator, pesquise sobre
