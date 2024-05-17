@@ -81,3 +81,28 @@ form button:active{ /* quando eu clickar no button --> active significa quando e
     background-color: blueviolet;
     padding: 10px 20px;
 }
+
+.calculadora {
+    width: 400px;
+}
+.display {
+    font-size: 2.2em;
+    width: 100%;
+    border: 1.5px rgb(119, 119, 119) solid;
+    border-radius: 4px;
+    text-align: right;
+    height: 60px;
+    padding: 0 2px;
+}
+.btn {
+    width: 100%;
+    font-size: 1em;
+    height: 50px;
+    background-color: rgb(212, 226, 231);
+    border: 1px solid rgb(163, 165, 167);
+    border-radius: 1px;
+    cursor: pointer;
+}
+.btn:hover {
+    background-color: rgb(201, 215, 223);
+}

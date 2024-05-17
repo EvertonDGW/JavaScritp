@@ -21,3 +21,11 @@ continue   ou    i++ */
   
 
   // quando voce usa --> 3 pontinhos ... isso é o operador rest operator, pesquise sobre
+
+  
+  //quando usamos this, ele aponta para um objeto que voce CRIOU por exemplo: se voce criou um objeto chamado CALCULADORA()
+  //então toda vez que voce usar this.(metodo do objeto criamos) é o mesmo que CALCULADORA.(metodo)
+  //ou seja this esta se referindo ao um objeto que foi criado
+  //obervação sobre this: em certos momentos this ao inves de se referir ao objeto que voce CRIOU ele pode esta se referindo ao objeto document()
+  //caso voce queira que o this aponte apenas para o OBJETO que voce CRIOU use arrow function.
+  //tem um belo exemplo disso na pasta Calculadora-Projeto
