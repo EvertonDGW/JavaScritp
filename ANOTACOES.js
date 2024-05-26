@@ -29,3 +29,7 @@ continue   ou    i++ */
   //obervação sobre this: em certos momentos this ao inves de se referir ao objeto que voce CRIOU ele pode esta se referindo ao objeto document()
   //caso voce queira que o this aponte apenas para o OBJETO que voce CRIOU use arrow function.
   //tem um belo exemplo disso na pasta Calculadora-Projeto
+
+  //quando NEW é usado no javascript ele cria um objeto, vazio normalmente  NEW é acompanhado de uma função --> New pessoa()
+  //isso significa que o objeto vazio criado por NEW vai receber as especificações/atributos da função pessoa()
+  //e o comando THIS é usado para se referir a função pessoa()
