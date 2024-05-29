@@ -1,54 +1,38 @@
-// mais didático, não muito usual
-// fazer a versão com fetch + async await depois
+/* fetch('pessoas.json') // busca os dados do json que são similares a objetos, mas com notação { "chave": "valor", "chaveDeNumero": 30 }
+    .then(resposta => resposta.json()) // .json() -> converte o json em objeto para poder ser manipulado pelo javascript
+    .then(json => carregaElementos(json)) // pega o valor já convertido e manda para uma função criada posteriormente
+ */
 
+    //substituindo por axios: necessário adicionar o script do axios no html
 
-const request = obj => {
-    const xhr = new XMLHttpRequest()
-    // xhr.open('GET', 'U', true) -> get representa buscar algum conteúdo
-    xhr.open(obj.method, obj.url, true) // assíncrono usa-se true e síncrono usa-se false
-    xhr.send() // para caso seja um formulário, como não estamos usando, pode ficar em branco ou null
-    xhr.addEventListener('load', () => {
-        if (xhr.status >= 200 && xhr.status < 300) { // consultar status em https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Status
-            obj.success(xhr.responseText)
-        } else {
-            obj.error(xhr.statusText)
-        }
-    })
-}
+    axios('pessoas.json')
+    .then(resposta => carregaElementos(resposta.data))
 
-document.addEventListener('click', evento => {
-    const elemento = evento.target
-    const tag = elemento.tagName.toLowerCase()
+function carregaElementos(json) {
+    const table = document.createElement('table') // cria uma tabela mas não mexe nela
+    
+    for (let pessoa of json) { // percorre todos objetos do json
+        const tr = document.createElement('tr') // cria uma linha
 
-    if (tag === 'a') {
-        evento.preventDefault()
-        carregaPagina(elemento)
+        let td = document.createElement('td') // cria a 1ª coluna
+        td.innerHTML = pessoa.nome // HTML da primeira coluna é o nome do "índice"
+        tr.appendChild(td) // adiciona a coluna à linha criada
+
+        td = document.createElement('td') // cria a 2ª coluna
+        td.innerHTML = pessoa.idade // HTML da segunda coluna é a idade do "índice"
+        tr.appendChild(td) // adiciona a coluna à linha criada 
+
+        td = document.createElement('td') // ...
+        td.innerHTML = pessoa.salario
+        tr.appendChild(td)
+
+        table.appendChild(tr)
+        console.log(pessoa.nome)
     }
-})
 
-function carregaPagina(elemento) {
-    const href = elemento.getAttribute('href')
-    console.log(href)
-
-    request({
-        method: 'GET',
-        url: href,
-        success(response) {
-            carregaResultado(response)
-        },
-        error(errorText) {
-            console.log(errorText)
-        }
-    })
+    const resultado = document.querySelector('.resultado') // seleciona a div no index.html
+    resultado.appendChild(table) // adiciona a tabela criada abaixo da div selecionada
 }
-
-function carregaResultado(response) {
-    const resultado = document.querySelector('.resultado')
-    resultado.innerHTML = response
-}
-
-
-
 
 
     
