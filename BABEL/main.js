@@ -15,3 +15,5 @@ console.log(nobobjt)
 
 //apasta node_modules é uma pasta que o babel precisa usar para funcionar corretamente. ela foi criado usando o comando
 //npm install --save-dev @babel/cli @babel/preset-env @babel/core
+
+//voce pode acessar o site: can i use. esse site vai te mostrar quais recursos determinados navegadores aceitam
